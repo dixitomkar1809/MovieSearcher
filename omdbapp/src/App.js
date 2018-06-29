@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Button from '@material-ui/core/Button';
+
 
 class App extends Component {
+  
   render() {
     return (
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
+      <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">MovieDB</h1>
+        <p class="lead">Information about any movie released in any year with its IMDB rating, to help you choose the right one to watch !</p>
+      </div>
+    </div>
     );
   }
 }
-
 export default App;
