@@ -87,31 +87,53 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {searchInput:'', releaseYear:'', genre:'' ,searchMovies: [], popularMovies:[], ratedRMovies:[], kidsPopularMovies:[], bestDramaMovies:[]};
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleYearChange = this.handleYearChange.bind(this);
+    this.handleGenreChange = this.handleGenreChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getMostPopularMovies();
     this.getHighestRatedMoviesRatedR();
     this.getMostPopularKidsMovies();
     this.getBestDramaMovies();
+    this.submitButton();
   }
 
-  handleChange(event){
+  handleSearchChange(event){
+    // console.log(event);
     this.setState({
-      searchInput: event.target.value,
-      releaseYear: event.target.value,
-      genre: event.target.value
+      searchInput: event.target.value
     });
   }
 
+  handleYearChange(event){
+    // console.log(event);
+    this.setState({
+      releaseYear:event.target.value
+    })
+  }
+
+  handleGenreChange(event){
+    // console.log(event);
+    this.setState({
+      genre: event.target.value
+    })
+  }
+
   handleSubmit(event){
-    axios.get('https://api.themoviedb.org/3/search/movie?api_key=e5c08d4b52d5ba11d89435bd750733b9&query='+this.state.searchInput)
+    // need to change the search feature as its not working the search bar just gives the discovered movies and not the actual search results 
+    // maybe change the api to search not the discover one base on conditions
+    axios.get("https://api.themoviedb.org/3/discover/movie?api_key=e5c08d4b52d5ba11d89435bd750733b9&query="+this.state.searchInput+"&primary_release_year="+this.state.releaseYear+"&with_genres="+this.state.genre)
     .then(res => {
+      console.log(res);
       this.setState({
         searchMovies: res.data.results
-        // genre: res.data.results.genre_ids
       })
     })
     event.preventDefault();
+  }
+
+  submitButton(){
+    return this.state.searchInput=='' && this.state.releaseYear=='' && this.state.genre==''
   }
 
   getMostPopularMovies(event){
@@ -183,18 +205,19 @@ class App extends Component {
               <div className="form-group">
                 <div className="row">
                   <div className="col-md-6">
-                    <input type="text" className="form-control" placeholder="Search..." value={this.state.searchInput} onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Search..." value={this.state.searchInput} onChange={this.handleSearchChange}/>
                   </div>
                   <div className="col-md-2">
-                    <input type="text" className="form-control" placeholder="Release Year" value={this.state.releaseYear} onChange={this.handleChange} />                  
+                    <input type="text" className="form-control" placeholder="Release Year" value={this.state.releaseYear} onChange={this.handleYearChange} />                  
                   </div>
                   <div className="col-md-2">
-                    <select onChange={this.handleChange} className="form-control">
-                    {this.movieGenre.map(((item, index) => (<option key={index} value={item.id}>{item.name}</option>)))}
+                    <select onChange={this.handleGenreChange} className="form-control">
+                      <option selected disabled>Select Genre</option>
+                      {this.movieGenre.map(((item, index) => (<option key={index} value={item.id}>{item.name}</option>)))}
                   </select>
                   </div>
                   <div className="col-md-2">
-                    <input className="btn btn-primary" type="Submit" placeholder="Search" />
+                    <input className="btn btn-primary" type="Submit" disabled={this.submitButton()} />
                   </div>
                 </div>
               </div>
