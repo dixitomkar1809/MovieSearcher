@@ -80,7 +80,7 @@ class Genre extends Component {
           "name": "Western"
         }
       ]
-      constructor(props){
+    constructor(props){
         super(props);
         this.state = {genreName:''}
         for (var i=0;i<this.genre.length;i++){
@@ -95,7 +95,7 @@ class Genre extends Component {
 
     render(){
         return(
-            <span className="badge badge-secondary">{this.state.genreName}</span>
+            <span className="badge badge-secondary genre">{this.state.genreName}</span>
         )
     }
 }

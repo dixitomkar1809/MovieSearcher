@@ -4,9 +4,89 @@ import Items from './items/items';
 import axios from 'axios';
 
 class App extends Component {
+
+  movieGenre = [
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 12,
+      "name": "Adventure"
+    },
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 35,
+      "name": "Comedy"
+    },
+    {
+      "id": 80,
+      "name": "Crime"
+    },
+    {
+      "id": 99,
+      "name": "Documentary"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10751,
+      "name": "Family"
+    },
+    {
+      "id": 14,
+      "name": "Fantasy"
+    },
+    {
+      "id": 36,
+      "name": "History"
+    },
+    {
+      "id": 27,
+      "name": "Horror"
+    },
+    {
+      "id": 10402,
+      "name": "Music"
+    },
+    {
+      "id": 9648,
+      "name": "Mystery"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 878,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 10770,
+      "name": "TV Movie"
+    },
+    {
+      "id": 53,
+      "name": "Thriller"
+    },
+    {
+      "id": 10752,
+      "name": "War"
+    },
+    {
+      "id": 37,
+      "name": "Western"
+    }
+  ]
+
   constructor(props){
     super(props);
-    this.state = {searchInput:'', searchMovies: [], popularMovies:[], ratedRMovies:[], kidsPopularMovies:[], bestDramaMovies:[]};
+    this.state = {searchInput:'', releaseYear:'', genre:'' ,searchMovies: [], popularMovies:[], ratedRMovies:[], kidsPopularMovies:[], bestDramaMovies:[]};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getMostPopularMovies();
@@ -17,7 +97,9 @@ class App extends Component {
 
   handleChange(event){
     this.setState({
-      searchInput: event.target.value
+      searchInput: event.target.value,
+      releaseYear: event.target.value,
+      genre: event.target.value
     });
   }
 
@@ -99,10 +181,22 @@ class App extends Component {
           <div className="tab-pane fade show active" id="searchMovies" role="tabpanel">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search..." value={this.state.searchInput} onChange={this.handleChange}/>
-              </div>
-              <div className="form-group">
-                <input className="form-control" type="Submit" placeholder="Search" />
+                <div className="row">
+                  <div className="col-md-6">
+                    <input type="text" className="form-control" placeholder="Search..." value={this.state.searchInput} onChange={this.handleChange}/>
+                  </div>
+                  <div className="col-md-2">
+                    <input type="text" className="form-control" placeholder="Release Year" value={this.state.releaseYear} onChange={this.handleChange} />                  
+                  </div>
+                  <div className="col-md-2">
+                    <select onChange={this.handleChange} className="form-control">
+                    {this.movieGenre.map(((item, index) => (<option key={index} value={item.id}>{item.name}</option>)))}
+                  </select>
+                  </div>
+                  <div className="col-md-2">
+                    <input className="btn btn-primary" type="Submit" placeholder="Search" />
+                  </div>
+                </div>
               </div>
             </form>
             <hr/>
