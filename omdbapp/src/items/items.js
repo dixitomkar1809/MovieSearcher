@@ -20,19 +20,21 @@ class items extends Component {
                     <div className="col-lg-9 col-md-9 col-sm-9">
                         <div className="row">
                             <div className="col-md-12">
-                                <h5>{this.props.title}</h5>
-                                <span>Genre: {this.props.genre.map((item, index) => item)}</span>
+                                <h2>{this.props.title}</h2>
+                                <p>Genre: {this.props.genre.map((item, index) => <Genre key={index} genre={item} /> )}</p>
                                 <br/>
-                                <sub>Release Date: {this.props.release_date}</sub>
+                                <p>Release Date: {this.props.release_date}</p>
                             </div>
                         </div>
+                        <br/>
                         <div className="row">
                             <div className="col-lg-12 col-md-12 col-sm-12">
-                                <p className="movie_description">{this.props.overview}</p>
+                                <p>{this.props.overview}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr />
             </div>
         )
     }
