@@ -237,7 +237,7 @@ class App extends Component {
               (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
             )}
           </div>
-          <div className="tab-pane fade" id="discoverMovies" role="tabpanel1">
+          <div className="tab-pane fade" id="discoverMovies" role="tabpanel">
             <form onSubmit={this.handleDiscover}>
               <div className="form-group">
                 <div className="row">
@@ -272,12 +272,12 @@ class App extends Component {
               (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
             )}
           </div>
-          <div className="tab-pane fade" id="kidsPopularMovies" role="tabpanel1">
+          <div className="tab-pane fade" id="kidsPopularMovies" role="tabpanel">
             {this.state.kidsPopularMovies.map((item, index) => 
               (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
             )}
           </div>
-          <div className="tab-pande fade" id="bestDramaMovies" role="tabpanel1">
+          <div className="tab-pande fade" id="bestDramaMovies" role="tabpanel">
             {this.state.bestDramaMovies.map((item, index) => 
               (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
             )}

@@ -6,7 +6,7 @@ import Genre from '../genre/genre';
 class items extends Component {
     constructor(props){
         super(props);
-        // console.log(this.props.genre);
+        console.log(this.props.genre);
     }
 
 

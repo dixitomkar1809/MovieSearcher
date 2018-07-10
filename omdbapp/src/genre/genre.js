@@ -84,11 +84,11 @@ class Genre extends Component {
         super(props);
         this.state = {genreName:''}
         for (var i=0;i<this.genre.length;i++){
-            if(this.genre[i].id==this.props.genre){
+            if(this.genre[i].id===this.props.genre){
                 this.state.genreName = this.genre[i].name;
             }
         }
-        if(this.state.genreName==''){
+        if(this.state.genreName===''){
             this.state.genreName = 'Not Available';
         }
     }
