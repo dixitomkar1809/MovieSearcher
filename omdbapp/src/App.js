@@ -194,7 +194,7 @@ class App extends Component {
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
           <h1 className="display-4">MovieDB</h1>
-          <p className="lead">Information about any movie released in any year with its IMDB rating, to help you choose the right one to watch !</p>
+          <p className="lead">Information about any movie released in any year to help you choose the right one to watch !</p>
           <ul className="nav nav-pills nav-justified" id="pills-tab" role="tablist">
             <li className="nav-item">
               <a className="nav-link active" data-toggle="pill" href="#searchMovies" role="tab">Search Movies</a>
