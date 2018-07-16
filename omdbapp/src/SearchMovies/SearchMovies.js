@@ -33,17 +33,17 @@ class SearchMovies extends Component{
         })
         event.preventDefault();
     }
-
+   
     render(){
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     <div className="row">
-                      <div className="col-md-10 col-sm-10">
+                      <div className="col-md-10 col-sm-10 col-8">
                         <input type="text" className="form-control" placeholder="Search..." value={this.state.searchInput} onChange={this.handleSearchChange}/>
                       </div>
-                      <div className="col-md-2 col-sm-2">
+                      <div className="col-md-2 col-sm-2 col-2">
                         <input className="btn btn-primary" type="Submit" disabled={this.submitButtonSearch()} />
                       </div>
                     </div>
@@ -51,7 +51,9 @@ class SearchMovies extends Component{
                 </form>
                 <hr/>
                 {this.state.searchMovies.map((item, index) => 
-                  (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
+                  ( item.backdrop_path?
+                    <Items key={index} rating={item.vote_average} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} /> : null
+                  )
                 )}
             </div>
         )

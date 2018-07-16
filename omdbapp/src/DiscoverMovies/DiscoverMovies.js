@@ -124,16 +124,15 @@ class DiscoverMovies extends Component{
                 <div className="form-group">
                     <div className="row">
                     <div className="col-md-3"></div>
-                    <div className="col-md-2">
-                        <input type="text" className="form-control" placeholder="Release Year" value={this.state.releaseYear} onChange={this.handleYearChange} />                  
+                    <div className="col-md-2 col-sm-4 col-4">
+                        <input type="text" className="form-control" placeholder="Year" value={this.state.releaseYear} onChange={this.handleYearChange} />                  
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-4 col-4 ">
                         <select onChange={this.handleGenreChange} className="form-control">
-                        <option selected disabled>Select Genre</option>
                         {this.movieGenre.map(((item, index) => (<option key={index} value={item.id}>{item.name}</option>)))}
                         </select>
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-4 col-4">
                         <input className="btn btn-primary" type="Submit" disabled={this.submitButtonDiscover()} />
                     </div>
                     </div>
@@ -141,7 +140,9 @@ class DiscoverMovies extends Component{
                 </form>
                 <hr/>
                 {this.state.discoveredMovies.map((item, index) => 
-                (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
+                  (item.backdrop_path?
+                    <Items key={index} rating={item.vote_average} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} /> : null
+                  )
                 )}
             </div>
         )

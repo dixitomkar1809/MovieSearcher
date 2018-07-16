@@ -22,10 +22,13 @@ class PopularMovies extends Component {
     render(){
         return(
             <div>
-            {this.state.popularMovies.map((item, index) => 
-              (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
-            )}
-          </div>
+                {this.state.popularMovies.map((item, index) => 
+                    (
+                        item.backdrop_path?
+                        <Items key={index} rating={item.vote_average} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} /> : null
+                    )
+                )}
+            </div>
         )
     }
 }

@@ -2,34 +2,31 @@ import React, {Component} from 'react';
 import '../items/items.css';
 import Genre from '../genre/genre';
 
-// api_key(for)
 class items extends Component {
-    constructor(props){
-        super(props);
-        console.log(this.props.genre);
-    }
-
 
     render(){
+
         return(
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-3 col-md-3 col-sm-3">
-                        <img  className="img-thumbnail" src={"https://image.tmdb.org/t/p/original"+this.props.poster} alt="Not Available"/>
-                    </div>
-                    <div className="col-lg-9 col-md-9 col-sm-9">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <h2>{this.props.title}</h2>
-                                <p>Genre: {this.props.genre.map((item, index) => <Genre key={index} genre={item} /> )}</p>
-                                <br/>
-                                <p>Release Date: {this.props.release_date}</p>
-                            </div>
-                        </div>
-                        <br/>
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12 col-sm-12">
-                                <p>{this.props.overview}</p>
+            <div>
+                <div className="card bg-dark">
+                    <img className="card-img img-fluid" src={"https://image.tmdb.org/t/p/original"+this.props.backdrop_path} alt={this.props.title} />
+                    <div className="card-img-overlay  black-background">
+                        <div className="row margin-top-adjust">
+                            {/* <div className="col-md-3 col-sm-3 col-3">
+                                <img className="img-thumbnail" src={"https://image.tmdb.org/t/p/original"+this.props.poster} alt={this.props.title} />
+                            </div> */}
+                            <div className="col-md-12 col-sm-12 col-12">
+                                <h1 className="card-title display-3">{this.props.title}</h1>
+                                <div className="row">
+                                    <div className="col-md-6 col-sm-3 col-6">
+                                        <h4 className="margin-top-adjust">Release Date: {this.props.release_date}</h4>
+                                    </div>
+                                    <div className="col-md-6 col-sm-3 col-6">
+                                        <h4 className="margin-top-adjust">Rating: {this.props.rating}/10 </h4>
+                                    </div>
+                                </div>
+                                <h4 className="margin-top-adjust">Genre: &nbsp; {this.props.genre.map((item, index) => <Genre key={index} genre={item} /> )}</h4>
+                                <h4 className="text-justify margin-top-adjust">{this.props.overview}</h4>
                             </div>
                         </div>
                     </div>
