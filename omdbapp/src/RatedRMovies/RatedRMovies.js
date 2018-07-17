@@ -24,7 +24,8 @@ class RatedRMovies extends Component {
         return(
             <div>
                 {this.state.ratedRMovies.map((item, index) => 
-                (<Items key={index} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} />)
+                (item.backdrop_path?
+                    <Items key={index} rating={item.vote_average} title={item.title} poster={item.poster_path} release_date={item.release_date} backdrop_path={item.backdrop_path} overview={item.overview} genre={item.genre_ids} /> : null)
                 )}
             </div>
         )

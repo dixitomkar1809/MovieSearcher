@@ -95,7 +95,7 @@ class Genre extends Component {
 
     render(){
         return(
-            <span className="badge badge-secondary genre">{this.state.genreName}</span>
+            <span className="badge badge-dark genre">{this.state.genreName}</span>
         )
     }
 }
