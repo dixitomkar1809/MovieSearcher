@@ -17,6 +17,12 @@
         overflow: scroll;
         overflow-y: auto;
     }
+
+    
+}
+
+.img-thumbnail{
+    padding: 0 !important;
 }
 
 .scrollable{
