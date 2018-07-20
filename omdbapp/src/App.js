@@ -17,28 +17,28 @@ class App extends Component {
   render() {
     return (
     <div>
-      <div className="jumbotron jumbotron-fluid">
+      <div className="jumbotron jumbotron-fluid text-color-change">
         <div className="container">
           <h1 className="display-4">MovieDB</h1>
           <p className="lead">Information about any movie released in any year to help you choose the right one to watch !</p>
           <ul className="nav nav-pills nav-justified" id="pills-tab" role="tablist">
             <li className="nav-item">
-              <a className="nav-link active" data-toggle="pill" href="#searchMovies" role="tab">Search Movies</a>
+              <a className="nav-link active text-color-change" data-toggle="pill" href="#searchMovies" role="tab">Search</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="pill" href="#discoverMovies" role="tab">Discover Movies</a>
+              <a className="nav-link text-color-change" data-toggle="pill" href="#discoverMovies" role="tab">Discover</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="pill" href="#popularMovies" role="tab">Popular Movies</a>
+              <a className="nav-link text-color-change" data-toggle="pill" href="#popularMovies" role="tab">Popular</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="pill" href="#ratedRMovies" role="tab">Rated R Movies</a>
+              <a className="nav-link text-color-change" data-toggle="pill" href="#ratedRMovies" role="tab">Rated R</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="pill" href="#kidsPopularMovies" role="tab">Kids Popular Movies</a>
+              <a className="nav-link text-color-change" data-toggle="pill" href="#kidsPopularMovies" role="tab">Kids Popular</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="pill" href="#bestDramaMovies" role="tab">Best Drama Movies</a>
+              <a className="nav-link text-color-change" data-toggle="pill" href="#bestDramaMovies" role="tab">Best Drama</a>
             </li>
           </ul>
         </div>
