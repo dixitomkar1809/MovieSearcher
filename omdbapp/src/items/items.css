@@ -1,4 +1,98 @@
-@media only screen and (max-width:400px){
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    h1{
+        font-size: 30px !important;
+        font-weight: 1900;
+    }
+
+    h4{
+        font-size:20px;
+    }
+
+    .margin-top-adjust{
+        margin-top: 0px ;
+    }
+
+    .scrollable{
+        background-color: blue;
+        max-height: 200px;
+        overflow: scroll;
+        overflow-y: auto;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    h1{
+        font-size: 40px !important;
+        font-weight: 1900;
+    }
+
+    h4{
+        font-size:20px;
+    }
+
+    .margin-top-adjust{
+        margin-top: 0px ;
+    }
+
+    .scrollable{
+        background-color: yellow;
+        color: black;
+        max-height: 300px;
+        overflow: scroll;
+        overflow-y: auto;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 375px) and (max-width: 812px) {
+    
+    h1{
+        font-size: 30px !important;
+        font-weight: 1900;
+    }
+
+    h4{
+        font-size:15px;
+    }
+
+    .margin-top-adjust{
+        margin-top: 0px ;
+    }
+
+    .scrollable{
+        background-color: green;
+        max-height: 220px;
+        overflow: scroll;
+        overflow-y: auto;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
     h1{
         font-size: 15px !important;
         font-weight: 1900;
@@ -13,12 +107,36 @@
     }
 
     .scrollable{
-        height: 80px;
+        background-color: red;
+        max-height: 100px;
         overflow: scroll;
         overflow-y: auto;
     }
-
     
+  }
+
+@media (min-width: 1024px) and (max-width: 1366px){
+    
+    h1{
+        font-size: 40px !important;
+        font-weight: 1900;
+    }
+
+    h4{
+        font-size:25px;
+    }
+
+    .margin-top-adjust{
+        margin-top: 0px ;
+    }
+
+    .scrollable{
+        background-color: aqua;
+        max-height: 300px;
+        overflow: scroll;
+        overflow-y: auto;
+    }
+   
 }
 
 .img-thumbnail{

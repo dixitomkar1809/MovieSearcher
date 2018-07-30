@@ -148,7 +148,6 @@ class DiscoverMovies extends Component{
         )
     }
     
-
 }
 
 export default DiscoverMovies;
