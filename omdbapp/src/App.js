@@ -19,8 +19,8 @@ class App extends Component {
     <div>
       <div className="jumbotron jumbotron-fluid text-color-change">
         <div className="container">
-          <h1 className="display-4">MovieDB</h1>
-          <p className="lead">Information about any movie released in any year to help you choose the right one to watch !</p>
+          <p className="display-4 title">MovieDB</p>
+          <p className="lead desc">Information about any movie released in any year to help you choose the right one to watch !</p>
           <ul className="nav nav-pills nav-justified" id="pills-tab" role="tablist">
             <li className="nav-item">
               <a className="nav-link active text-color-change" data-toggle="pill" href="#searchMovies" role="tab">Search</a>
