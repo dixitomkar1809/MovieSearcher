@@ -8,6 +8,11 @@ class PopularKidsMovies extends Component{
     constructor(props){
         super(props);
         this.state = {kidsPopularMovies:[]};
+        // this.getMostPopularKidsMovies();
+    }
+
+    componentDidMount(){
+        // this.state = {kidsPopularMovies:[]};
         this.getMostPopularKidsMovies();
     }
     

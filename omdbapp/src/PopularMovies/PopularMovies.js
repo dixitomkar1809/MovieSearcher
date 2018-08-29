@@ -7,6 +7,10 @@ class PopularMovies extends Component {
     constructor(props){
         super(props);
         this.state = {popularMovies:[]};
+        // this.getMostPopularMovies();
+    }
+
+    componentDidMount(){
         this.getMostPopularMovies();
     }
     

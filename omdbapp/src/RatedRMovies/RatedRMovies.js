@@ -7,8 +7,13 @@ class RatedRMovies extends Component {
     
     constructor(props){
         super(props);
-        this.getRatedRMovies();
+        // this.getRatedRMovies();
         this.state = {ratedRMovies:[]}
+    }
+
+    componentDidMount(){
+        this.getRatedRMovies();
+        // this.state = {ratedRMovies:[]}
     }
     
     getRatedRMovies(event){

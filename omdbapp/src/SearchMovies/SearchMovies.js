@@ -12,6 +12,13 @@ class SearchMovies extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentDidMount(){
+    //   this.state = {searchInput:'', searchMovies:[] }
+    //     this.handleSearchChange = this.handleSearchChange.bind(this);
+    //     this.submitButtonSearch = this.submitButtonSearch.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    // }
+
     handleSearchChange(event){
         // console.log(event);
         this.setState({
